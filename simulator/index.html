@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080e18">
+  <title>CommunityMate · Resident concierge</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-state="ready">
+  <div class="shell">
+    <header>
+      <a class="brand" href="/" aria-label="CommunityMate home"><span class="brand-mark" aria-hidden="true">c<span>m</span></span><span>CommunityMate</span></a>
+      <div class="header-actions">
+        <button id="voiceToggle" class="quiet-button" aria-pressed="true" title="Read replies aloud">Voice on</button>
+        <button id="newChat" class="quiet-button" title="Start a new conversation">New conversation</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="eyebrow"><span class="status-dot"></span> MAPLE GROVE APARTMENTS</div>
+      <h1 id="headline">A little help,<br>just ask.</h1>
+      <p class="intro">Your community concierge, one conversation away.</p>
+
+      <div class="device-area">
+        <button id="mic" class="device" aria-label="Start speaking" title="Tap to speak">
+          <span class="device-glow" aria-hidden="true"></span>
+          <span class="device-face" aria-hidden="true">
+            <span class="wave"><i></i><i></i><i></i><i></i><i></i></span>
+            <svg class="mic-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg>
+          </span>
+        </button>
+        <p id="status" class="device-status" role="status">Tap to speak, or type below</p>
+      </div>
+
+      <section class="reply-area" aria-live="polite" aria-atomic="true">
+        <p id="heard" class="heard" hidden></p>
+        <p id="reply" class="reply">Ask about your community, reserve a space,<br class="desktop-break"> or get help with a repair.</p>
+      </section>
+
+      <section id="confirmation" class="confirmation" aria-labelledby="confirmationTitle" hidden>
+        <div class="confirm-top"><span class="confirm-symbol" aria-hidden="true">?</span><div><p class="card-eyebrow">YOUR CONFIRMATION</p><h2 id="confirmationTitle">Review this action</h2></div></div>
+        <dl id="confirmationDetails"></dl>
+        <p class="confirm-note">Confirm saves this action to the local demo. You can also say “yes” or “no”.</p>
+        <div class="confirm-actions"><button id="decline" class="button-secondary">Decline</button><button id="confirm" class="button-primary">Confirm</button></div>
+      </section>
+
+      <div id="suggestions" class="suggestions" aria-label="Try a question">
+        <button data-question="What are the community quiet hours? Include the source.">Quiet hours <span>↗</span></button>
+        <button data-question="I would like to book the clubhouse.">Book a space <span>↗</span></button>
+        <button data-question="Do I have any packages received by the concierge?">My packages <span>↗</span></button>
+      </div>
+
+      <form id="messageForm" class="composer" autocomplete="off">
+        <label class="sr-only" for="message">Type a message</label>
+        <input id="message" name="message" placeholder="Or type your request…" maxlength="4000" required>
+        <button id="send" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m5 12 7-7 7 7M12 5v15"/></svg></button>
+      </form>
+      <p id="notice" class="notice" role="alert" hidden></p>
+
+      <details id="conversation" class="conversation">
+        <summary>Conversation <span id="turnCount"></span><span class="summary-chevron">⌄</span></summary>
+        <ol id="transcript" aria-label="Conversation transcript"></ol>
+        <details class="activity"><summary>Tool activity <span id="toolCount">0</span></summary><ol id="tools"></ol></details>
+      </details>
+    </main>
+
+    <footer>
+      <p><span id="modeLabel">Local simulator</span> <span class="divider">·</span> Demo resident RES001</p>
+      <p class="disclosure">Independent, simulated Alexa+ experience. <span id="costLabel">Messages use Amazon Bedrock.</span></p>
+      <details class="voice-info"><summary>About voice</summary><p>Speech input depends on browser support and microphone permission. Your browser’s speech service may process audio remotely. The transcript is sent to the local agent. Spoken replies use your browser’s available voices. Voice is not Alexa’s voice. Type a message if speech input is unavailable.</p></details>
+    </footer>
+  </div>
+</body>
+</html>

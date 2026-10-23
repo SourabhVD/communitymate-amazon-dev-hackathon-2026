@@ -1,0 +1,34 @@
+.venv/
+.agent-venv/
+__pycache__/
+*.py[cod]
+*.db
+*.db-shm
+*.db-wal
+.env
+
+# Local credentials and configuration
+.aws/
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated files
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+tmp/
+
+# Local notes, plans and testing guides
+PROGRESS_AND_LEARNING.md
+COMMUNITY_EXPANSION.md
+MAINTENANCE_TEST_GUIDE.md
+RESIDENT_SERVICES_TEST_GUIDE.md
+RESOURCES_AND_PROMPTS.md
+PHASE3_CLIENT.md
+SIMULATOR.md
+MCP Server Plan.pdf

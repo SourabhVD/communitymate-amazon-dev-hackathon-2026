@@ -1,0 +1,2 @@
+# Tested MCP server environment. Agent dependencies live separately.
+mcp==2.3.0

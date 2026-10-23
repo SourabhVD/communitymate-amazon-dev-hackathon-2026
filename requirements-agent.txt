@@ -1,0 +1,10 @@
+# Separate environment: the working server uses MCP 2.3.0.
+strands-agents==1.62.0
+mcp==2.1.1
+boto3[crt]==1.43.118
+tzdata==2026.5
+# Local browser simulator (already installed through the MCP/agent dependencies).
+starlette==1.9.0
+uvicorn==0.54.0
+jsonschema==4.26.0
+httpx==0.28.1
